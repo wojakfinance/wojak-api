@@ -1,21 +1,21 @@
-# pancake-api
+# WojakFinance API
 
-Set of endpoints utilities for PancakeSwap, based on Serverless.
+The WojakFinance API is a set of endpoints used by market aggregators (e.g. coinmarketcap.com) to surface WojakFinance liquidity
+and volume information. All information is fetched from the underlying subgraphs.
 
-## Dependencies
+## Documentation
 
-- [Vercel CLI](https://vercel.com/download)
-    - Required to emulate local environment (serverless functions).
+The documentation of the endpoints, for WojakFinance, can be found [here](documentation.md).
 
-# Development
+## Development
 
-## Install requirements
+### Install requirements
 
 ```shell
 yarn global add vercel
 ```
 
-## Build
+### Build
 
 ```shell
 # Install dependencies
@@ -28,17 +28,17 @@ vercel dev
 Endpoints are based on filename inside the `api/` folder.
 
 ```shell
-# api/version.ts
-curl -X GET 'localhost:3000/api/version'
+# api/pairs.ts
+curl -X GET 'localhost:3000/api/pairs'
 
 # ...
 ```
 
-# Production
+## Production
 
-## Deploy
+### Deploy
 
-Deployments to production should be triggered by a webhook when a commit, or a pull-request is merged to `master`.
+Deployments to production are triggered by a webhook when a commit, or a pull-request is merged to `master`.
 
 If you need to force a deployment, use the following command:
 

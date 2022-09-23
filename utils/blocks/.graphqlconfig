@@ -1,0 +1,15 @@
+{
+  "name": "DogeChain Blocks",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Binance Smart Chain Blocks": {
+        "url": "https://graph.yodeswap.dog/subgraphs/name/yode-blocks",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}

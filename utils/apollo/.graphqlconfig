@@ -1,0 +1,15 @@
+{
+  "name": "Wojak Finance Exchange",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Wojak Finance Exchange": {
+        "url": "https://api.dogechainhealth.com/subgraphs/name/wojakswap/exchange",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}

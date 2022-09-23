@@ -3,21 +3,17 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/api/v1/:match*",
-      "destination": "https://api.wojak.fi/api/v1/:match*"
+      "source": "/api/tokens",
+      "destination": "/api/tokens"
     },
     {
-      "source": "/api/governance/vote/:address",
-      "destination": "/api/governance/vote"
-    },
-    {
-      "source": "/api/governance/vote/:address/:block",
-      "destination": "/api/governance/vote"
+      "source": "/api/tokens/:address",
+      "destination": "/api/tokens/tokens"
     }
   ],
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -29,53 +25,19 @@
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "*"
+          "value": "Accept, Content-Type, Origin"
         },
         {
-          "key" : "Cache-Control",
-          "value" : "s-maxage=60, stale-while-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/api/v1/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
+          "key": "Access-Control-Max-Age",
+          "value": "86400"
         },
         {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, HEAD, OPTIONS"
+          "key": "Cache-Control",
+          "value": "public, max-age=60, s-maxage=60"
         },
         {
-          "key": "Access-Control-Allow-Headers",
-          "value": "*"
-        },
-        {
-          "key" : "Cache-Control",
-          "value" : "no-cache, no-store, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/api/governance/vote/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, HEAD, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "*"
-        },
-        {
-          "key" : "Cache-Control",
-          "value" : "public, max-age=60, s-max-age=60"
+          "key": "Pragma",
+          "value": "no-cache"
         }
       ]
     }

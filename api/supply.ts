@@ -6,7 +6,6 @@ import {
   maxSupply,
 } from "../utils/supply";
 import formatNumber from "../utils/formatNumber";
-import BigNumber from "bignumber.js";
 
 export default async (req: NowRequest, res: NowResponse): Promise<void> => {
   let totalSupply = await getTotalSupply();

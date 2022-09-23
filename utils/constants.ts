@@ -11,7 +11,7 @@ export const MASTERCHEF_CONTRACT = "0x065AAE6127D2369C85fE3086b6707Ac5dBe8210a";
 export const LOTTERY_CONTRACT = "0x3C3f2049cc17C136a604bE23cF7E42745edf3b91";
 export const MULTICALL_CONTRACT = "0x321Bf4EF31c87CF6E23E779db9C5F806A37d695F";
 
-// PancakeSwap SDK Token.
+// WojakFinance SDK Token.
 export const WOJK_TOKEN = new Token(ChainId.DOGECHAIN, WOJK, 18, 'WOJK');
 export const WDOGE_TOKEN = new Token(ChainId.DOGECHAIN, WDOGE, 18, 'WDOGE');
 export const WOJK_DOGE_TOKEN = new Token(ChainId.DOGECHAIN, WOJK_DOGE_FARM, 18, 'Wojak LP');
