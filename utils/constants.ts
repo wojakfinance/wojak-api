@@ -1,7 +1,7 @@
 import { ChainId, Token } from "@wojakfinance/sdk";
 
 // BEP-20 addresses.
-export const WOJK = "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82";
+export const WOJK = "0x570C41a71b5e2cb8FF4445184d7ff6f78A4DbcBD";
 export const WDOGE = "0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101";
 export const DEAD = "0x000000000000000000000000000000000000dEaD";
 
@@ -12,8 +12,8 @@ export const LOTTERY_CONTRACT = "0x3C3f2049cc17C136a604bE23cF7E42745edf3b91";
 export const MULTICALL_CONTRACT = "0x321Bf4EF31c87CF6E23E779db9C5F806A37d695F";
 
 // PancakeSwap SDK Token.
-export const WOJK_TOKEN = new Token(ChainId.DOGECHAIN, WOJK, 18);
-export const WDOGE_TOKEN = new Token(ChainId.DOGECHAIN, WDOGE, 18);
-export const WOJK_DOGE_TOKEN = new Token(ChainId.DOGECHAIN, WOJK_DOGE_FARM, 18);
+export const WOJK_TOKEN = new Token(ChainId.DOGECHAIN, WOJK, 18, 'WOJK');
+export const WDOGE_TOKEN = new Token(ChainId.DOGECHAIN, WDOGE, 18, 'WDOGE');
+export const WOJK_DOGE_TOKEN = new Token(ChainId.DOGECHAIN, WOJK_DOGE_FARM, 18, 'Wojak LP');
 
 export const LOCKED_WOJK_POOL = "0xDF21058099e69D3635005339721C4826c4c47F8A";

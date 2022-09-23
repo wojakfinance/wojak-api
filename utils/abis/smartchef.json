@@ -258,7 +258,7 @@
       },
       {
         "internalType":"uint256",
-        "name":"accCakePerShare",
+        "name":"accWojkPerShare",
         "type":"uint256"
       }
     ],
