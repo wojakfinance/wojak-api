@@ -1,7 +1,7 @@
 import { NowRequest, NowResponse } from "@vercel/node";
 import { getContract } from "../../utils/web3";
 import bep20ABI from "../../utils/abis/bep20.json";
-import { CAKE } from "../../utils/constants";
+import { WOJK } from "../../utils/constants";
 import BigNumber from "bignumber.js";
 
 const minimumBalance = 0.0001;
@@ -11,7 +11,7 @@ export default async (req: NowRequest, res: NowResponse): Promise<void> => {
 
   try {
     // Cake balance in wallet.
-    const cakeContract = getContract(bep20ABI, CAKE, true);
+    const cakeContract = getContract(bep20ABI, WOJK, true);
     const cakeBalance = await cakeContract.methods.balanceOf(address).call(undefined, block);
 
     /**

@@ -1,19 +1,19 @@
-import { ChainId, Token } from "@pancakeswap-libs/sdk";
+import { ChainId, Token } from "@wojakfinance/sdk";
 
 // BEP-20 addresses.
-export const CAKE = "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82";
-export const WBNB = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
+export const WOJK = "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82";
+export const WDOGE = "0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101";
 export const DEAD = "0x000000000000000000000000000000000000dEaD";
 
 // Contract addresses.
-export const CAKE_BNB_FARM = "0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6";
-export const MASTERCHEF_CONTRACT = "0x73feaa1eE314F8c655E354234017bE2193C9E24E";
+export const WOJK_DOGE_FARM = "0xf4da9059f5BB18b50773Fe1725b94Fc189E1b75c";
+export const MASTERCHEF_CONTRACT = "0x065AAE6127D2369C85fE3086b6707Ac5dBe8210a";
 export const LOTTERY_CONTRACT = "0x3C3f2049cc17C136a604bE23cF7E42745edf3b91";
-export const MULTICALL_CONTRACT = "0x1Ee38d535d541c55C9dae27B12edf090C608E6Fb";
+export const MULTICALL_CONTRACT = "0x321Bf4EF31c87CF6E23E779db9C5F806A37d695F";
 
 // PancakeSwap SDK Token.
-export const CAKE_TOKEN = new Token(ChainId.MAINNET, CAKE, 18);
-export const WBNB_TOKEN = new Token(ChainId.MAINNET, WBNB, 18);
-export const CAKE_BNB_TOKEN = new Token(ChainId.MAINNET, CAKE_BNB_FARM, 18);
+export const WOJK_TOKEN = new Token(ChainId.DOGECHAIN, WOJK, 18);
+export const WDOGE_TOKEN = new Token(ChainId.DOGECHAIN, WDOGE, 18);
+export const WOJK_DOGE_TOKEN = new Token(ChainId.DOGECHAIN, WOJK_DOGE_FARM, 18);
 
-export const LOCKED_CAKE_POOL = "0x45c54210128a065de780C4B0Df3d16664f7f859e";
+export const LOCKED_WOJK_POOL = "0xDF21058099e69D3635005339721C4826c4c47F8A";

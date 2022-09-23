@@ -1,16 +1,16 @@
 import Web3 from "web3";
 
 const BSC_NODE_RPC = [
-  "https://bsc-dataseed.binance.org/",
-  "https://bsc-dataseed1.defibit.io/",
-  "https://bsc-dataseed1.ninicoin.io/",
+  "https://rpc-sg.dogechain.dog",
+  "https://rpc-us.dogechain.dog",
+  "https://rpc.dogechain.dog",
+  "https://dogechain.ankr.com"
 ];
 
 const BSC_ARCHIVE_NODE_RPC = [
-  "https://bsc-private-dataseed1.nariox.org/",
-  "https://bsc-private-dataseed3.nariox.org/",
-  "https://bsc-private-dataseed4.nariox.org/",
-  "https://bsc-private-dataseed5.nariox.org/",
+  "https://rpc01-sg.dogechain.dog",
+  "https://rpc02-sg.dogechain.dog",
+  "https://rpc03-sg.dogechain.dog",
 ];
 
 export const getWeb3 = (archive = false): Web3 => {

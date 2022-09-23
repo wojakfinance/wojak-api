@@ -1,9 +1,8 @@
 import { NowRequest, NowResponse } from "@vercel/node";
 import {
   getBurnedSupply,
-  getLockedCake,
+  getLockedWojk,
   getTotalSupply,
-  planetFinanceBurnedTokensWei,
   maxSupply,
 } from "../utils/supply";
 import formatNumber from "../utils/formatNumber";
@@ -13,38 +12,34 @@ export default async (req: NowRequest, res: NowResponse): Promise<void> => {
   let totalSupply = await getTotalSupply();
   totalSupply = totalSupply.div(1e18);
 
-  let burnedSupply = await getBurnedSupply();
-  burnedSupply = burnedSupply.div(1e18);
+  let totalBurnedTokens = await getBurnedSupply();
+  totalBurnedTokens = totalBurnedTokens.div(1e18);
 
-  let lockedCake = await getLockedCake();
-  lockedCake = lockedCake.div(1e18);
+  let lockedWojk = await getLockedWojk();
+  lockedWojk = lockedWojk.div(1e18);
 
-  const planetFinanceBurnedTokens = planetFinanceBurnedTokensWei.div(1e18);
+  const burnedAndLockedTokens = totalBurnedTokens.plus(lockedWojk);
 
-  const totalBurnedTokens = burnedSupply.plus(planetFinanceBurnedTokens);
-
-  const burnedAndLockedTokens = totalBurnedTokens.plus(lockedCake);
-
-  const unburntCake = totalSupply.minus(totalBurnedTokens);
+  const unburntWojk = totalSupply.minus(totalBurnedTokens);
 
   const circulatingSupply = totalSupply.minus(burnedAndLockedTokens);
 
   if (req.query?.q === "totalSupply") {
-    res.json(unburntCake.toNumber());
+    res.json(unburntWojk.toNumber());
   } else if (req.query?.q === "circulatingSupply") {
     res.json(circulatingSupply.toNumber());
   } else if (req.query?.verbose) {
     res.json({
       totalMinted: formatNumber(totalSupply.toNumber()),
-      totalSupply: formatNumber(unburntCake.toNumber()),
-      burnedSupply: formatNumber(burnedSupply.toNumber()),
+      totalSupply: formatNumber(unburntWojk.toNumber()),
+      burnedSupply: formatNumber(totalBurnedTokens.toNumber()),
       circulatingSupply: formatNumber(circulatingSupply.toNumber()),
-      lockedCake: formatNumber(lockedCake.toNumber()),
+      lockedWojk: formatNumber(lockedWojk.toNumber()),
       maxSupply: formatNumber(maxSupply),
     });
   } else {
     res.json({
-      totalSupply: unburntCake.toNumber(),
+      totalSupply: unburntWojk.toNumber(),
       burnedSupply: totalBurnedTokens.toNumber(),
       circulatingSupply: circulatingSupply.toNumber(),
     });
